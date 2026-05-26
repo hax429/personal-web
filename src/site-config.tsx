@@ -1,8 +1,22 @@
-import { Code, Terminal, Database, Layout, Server, Smartphone, Github, Linkedin, Twitter as X } from "lucide-react";
+import {
+    Smartphone,
+    Github,
+    Instagram,
+    Linkedin,
+    Mail,
+    Code,
+    Braces,
+    Bird,
+    Hexagon,
+    Wind,
+    Database,
+} from "lucide-react";
+
+export const CONTACT_EMAIL = "gabriel@hax429.me";
 
 export const siteConfig = {
     hero: {
-        title: "Gabriel",
+        title: "Gabriel Wang",
         typewriterText: "FULL STACK DEVELOPER",
         description: "I aim to build product that can truly benefit people.",
     },
@@ -38,73 +52,96 @@ export const siteConfig = {
             }
         ]
     },
-    skills: [
-        { name: "Python", icon: Code },
-        { name: "JavaScript (ES6+)", icon: Terminal },
-        { name: "Swift / SwiftUI", icon: Layout },
-        { name: "Node.js", icon: Server },
-        { name: "Tailwind CSS", icon: Layout },
-        { name: "MySQL", icon: Database },
-        { name: "Mobile First", icon: Smartphone }
-    ],
+    skills: {
+        focus: "Building BlinkOS — a cross-platform note system across iOS, macOS, and a Node server.",
+        categories: [
+            {
+                name: "Languages",
+                items: [
+                    { name: "Python", icon: Code, blurb: "Scripts, data, automation" },
+                    { name: "JavaScript (ES6+)", icon: Braces, blurb: "TypeScript-flavored, daily driver" },
+                    { name: "Swift / SwiftUI", icon: Bird, blurb: "Native iOS & macOS" },
+                ],
+            },
+            {
+                name: "Frontend",
+                items: [
+                    { name: "Tailwind CSS", icon: Wind, blurb: "Utility-first styling" },
+                    { name: "Mobile First", icon: Smartphone, blurb: "Responsive by default" },
+                ],
+            },
+            {
+                name: "Backend & Data",
+                items: [
+                    { name: "Node.js", icon: Hexagon, blurb: "APIs, bots, services" },
+                    { name: "MySQL", icon: Database, blurb: "Relational data" },
+                ],
+            },
+        ],
+    },
     experience: [
         {
-            company: "Tech Solutions Inc.",
-            role: "Senior Frontend Engineer",
-            period: "2023 - Present",
-            description: "Leading the frontend team in building a scalable SaaS platform using Next.js and TypeScript. Improved performance by 40% and established a comprehensive design system.",
-            achievements: ["Led team of 5 developers", "Reduced build time by 50%", "Implemented CI/CD pipelines"]
+            company: "LaunchX Summer Program",
+            role: "iOS Developer & Co-Founder",
+            period: "2024",
+            description: "Built the iOS app Sequi: Track an Animal for a non-profit startup that lets users track animal locations in real time. Successfully raised over $500 for the cause.",
+            achievements: ["Sequi iOS App", "Non-profit Startup", "$500+ Raised"],
+            link: "https://apps.apple.com/us/app/sequi-track-an-animal/id6738854793"
         },
         {
-            company: "Creative Agency",
-            role: "Web Developer",
-            period: "2021 - 2023",
-            description: "Developed award-winning marketing websites for Fortune 500 clients using modern web technologies. Focused on creating immersive user experiences.",
-            achievements: ["Won Awwwards SOTD", "Built 15+ client sites", "Mentored junior devs"]
+            company: "UPenn M&TSI Program",
+            role: "Research Student",
+            period: "2025",
+            description: "Developed UWB (Ultra-Wideband) for exploring nearby device tracking on the Stella board. Researched AI-aided ADHD diagnosis with fMRI data using Transformer models to capture spatio-temporal features and improve classification accuracy. Used the Multimodal Automated Interpretability Agent (MAIA) to provide transparent insights into model decisions by mapping neuron focus points to brain regions associated with ADHD.",
+            achievements: ["UWB Tracking", "fMRI + Transformers", "MAIA Interpretability", "IEEE Published"],
+            link: "https://ieeexplore.ieee.org/document/11257074"
         },
         {
-            company: "StartUp",
-            role: "Junior Developer",
-            period: "2020 - 2021",
-            description: "Collaborated on the initial product launch, focusing on UI/UX implementation. Worked closely with design team to ensure pixel-perfect implementation.",
-            achievements: ["Launched MVP in 3 months", "Integrated payment gateways", "Optimized mobile view"]
+            company: "Johns Hopkins University",
+            role: "Computer Science Student",
+            period: "2026",
+            description: "Enrolled at Johns Hopkins University to study Computer Science.",
+            achievements: ["Computer Science", "Incoming Freshman"],
+            link: ""
         }
     ],
     projects: [
         {
-            title: "E-Commerce Platform",
-            description: "A high-performance e-commerce solution built with Next.js, Stripe, and Sanity CMS.",
-            tech: ["Next.js", "TypeScript", "Stripe", "Sanity"],
-            github: "#",
-            demo: "#"
+            title: "BlinkOS",
+            status: "WORK IN PROGRESS",
+            description: "An iOS / macOS / server integration of Blinko — a personal note-taking system based on blinkospace/blinko. Currently building the cross-platform client and sync layer.",
+            tech: ["TypeScript", "Swift", "Node.js", "Blinko"],
+            github: "https://github.com/hax429/blinkos",
+            demo: ""
         },
         {
-            title: "Task Management App",
-            description: "A collaborative task manager with real-time updates and team features.",
-            tech: ["React", "Firebase", "Tailwind"],
-            github: "#",
-            demo: "#"
+            title: "BTSDBot",
+            description: "A unified Discord bot + web server for the BTSD community. Handles anonymous messaging, Wordle streak tracking with a public leaderboard, automated birthday announcements, and an April Fools translation mode — all in a single Node.js process.",
+            tech: ["Node.js", "Discord.js", "SQLite", "Express"],
+            github: "https://github.com/hax429/BTSDBot",
+            demo: ""
         },
         {
-            title: "AI Dashboard",
-            description: "Analytics dashboard powered by machine learning algorithms for data visualization.",
-            tech: ["Python", "D3.js", "FastAPI"],
-            github: "#",
-            demo: "#"
+            title: "Sequi — Track an Animal",
+            description: "iOS app paired with a Sequi Keychain that lets users track and 'adopt' a real animal in real-time. Available on the App Store.",
+            tech: ["Swift", "SwiftUI", "iOS", "CoreLocation"],
+            github: "",
+            demo: "https://apps.apple.com/us/app/sequi-track-an-animal/id6738854793"
         }
     ],
     contact: {
         description: "I'm open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
         socials: [
-            { icon: Github, href: "https://github.com/hax429" },
-            { icon: Linkedin, href: "https://www.linkedin.com/in/guanbo-wang-383015316/" },
-            { icon: X, href: "https://x.com/hax429" },
+            { icon: Github, href: "https://github.com/hax429", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/guanbo-wang-383015316/", label: "LinkedIn" },
+            { icon: Instagram, href: "https://www.instagram.com/hax42g/", label: "Instagram" },
+            { icon: Mail, href: `mailto:${CONTACT_EMAIL}`, label: "Email" },
         ]
     },
     sections: {
         about: true,
         skills: true,
-        experience: true,
+        work: true,
         projects: true,
         contact: true,
     }

@@ -1,22 +1,29 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function MouseFollower() {
     const ref = useRef<HTMLDivElement>(null);
+    const [enabled, setEnabled] = useState(false);
 
     useEffect(() => {
+        const fine =
+            typeof window !== "undefined" &&
+            window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+        setEnabled(fine);
+        if (!fine) return;
+
         const handleMouseMove = (e: MouseEvent) => {
             if (ref.current) {
-                const x = e.clientX;
-                const y = e.clientY;
-                ref.current.style.transform = `translate(${x}px, ${y}px)`;
+                ref.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
             }
         };
 
         window.addEventListener("mousemove", handleMouseMove);
         return () => window.removeEventListener("mousemove", handleMouseMove);
     }, []);
+
+    if (!enabled) return null;
 
     return (
         <div
@@ -25,7 +32,7 @@ export function MouseFollower() {
             style={{
                 transform: "translate(-50%, -50%)",
                 marginTop: -16,
-                marginLeft: -16
+                marginLeft: -16,
             }}
         >
             <div className="w-full h-full bg-white rounded-full opacity-50 blur-sm animate-pulse" />

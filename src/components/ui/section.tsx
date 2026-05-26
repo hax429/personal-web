@@ -13,7 +13,7 @@ interface SectionProps {
 
 export function Section({ id, title, children, className }: SectionProps) {
     return (
-        <section id={id} className={twMerge("min-h-screen flex flex-col justify-center snap-start py-20 max-w-5xl mx-auto px-6", className)}>
+        <section id={id} className={twMerge("min-h-screen flex flex-col justify-center snap-start py-16 sm:py-20 max-w-5xl mx-auto px-4 sm:px-6", className)}>
             <div className="flex flex-col gap-8">
                 <Reveal width="100%">
                     <h2 className="text-3xl md:text-4xl font-mono font-bold flex items-center gap-4 text-white">

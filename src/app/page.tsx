@@ -5,11 +5,14 @@ import { Skills } from "@/components/skills";
 import { Work } from "@/components/work";
 import { Projects } from "@/components/projects";
 import { Contact } from "@/components/contact";
+import { SectionNav } from "@/components/ui/section-nav";
 import { siteConfig } from "@/site-config";
 
 export default function Home() {
   return (
-    <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth pb-20 no-scrollbar">
+    <main className="h-screen overflow-y-scroll sm:snap-y sm:snap-mandatory scroll-smooth pb-20 no-scrollbar">
+      <SectionNav />
+
       {/* Hero is always visible */}
       <div className="snap-start">
         <Hero />
@@ -34,7 +37,7 @@ export default function Home() {
       </div>
 
       <footer className="snap-start text-center py-10 text-gray-600 font-mono text-xs">
-        © {new Date().getFullYear()} DANIEL. ALL RIGHTS RESERVED.
+        © {new Date().getFullYear()} GABRIEL WANG. ALL RIGHTS RESERVED.
       </footer>
     </main>
   );
